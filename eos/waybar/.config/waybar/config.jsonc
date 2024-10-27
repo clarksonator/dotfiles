@@ -1,0 +1,96 @@
+{
+    "layer": "top",
+    "modules-left": ["hyprland/workspaces", "hyprland/mode"],
+    "modules-center": ["hyprland/window"],
+    "modules-right": ["network", "pulseaudio", "group/hardware", "clock"],
+    "hyprland/window": {
+        "max-length": 50
+    },
+    "battery": {
+        "interval": 60,
+        "states": {
+            "warning": 25,
+            "critical": 15
+        },
+        "format": "{icon}   {capacity}%",
+        "format-charging": "{capacity}% ",
+        "format-plugged": " {capacity}%",
+        "format-full": "",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "clock": {
+        "format": "{:%a, %d %H:%M}",
+        "format-alt": "{:%a, %d. %b  %H:%M}",
+        "tooltip-format": "{:%m-%d}",
+    },
+    "network": {
+    "interface": "wlan0",
+    "format": "{ifname}",
+    "format-wifi": "",
+    "format-ethernet": "{ipaddr}/{cidr} 󰊗",
+    "format-disconnected": "󰖪", //An empty format will hide the module.
+    "tooltip-format": "{ifname} via {gwaddr} 󰊗",
+    "tooltip-format-wifi": "({signalStrength}%) ",
+    "tooltip-format-ethernet": "{ifname} ",
+    "tooltip-format-disconnected": "Disconnected",
+    "max-length": 50
+    },
+    "hyprland/workspaces": {
+        "format": "{name}: {icon}",
+        "format-icons": {
+		"1": " ",
+		"2": " ",
+		"3": " ",
+		"4": " ",
+		"5": "",
+		"active": "",
+		"default": ""
+        },
+        "persistent_workspaces": {
+            "*": 4,
+        }
+    },
+    "custom/pipewire": {
+    "tooltip": false,
+    "max-length": 6,
+    "exec": "$HOME/.config/waybar/scripts/pipewire.sh",
+    "on-click": "pavucontrol",
+    "on-click-right": "qpwgraph"
+},
+    "pulseaudio": {
+    "format": "{volume}% {icon}",
+    "format-bluetooth": "{volume}% {icon}",
+    "format-muted": "",
+    "format-icons": {
+        "headphone": "",
+        "hands-free": "",
+        "headset": "",
+        "phone": "",
+        "phone-muted": "",
+        "portable": "",
+        "car": "",
+        "default": ["", ""]
+    },
+    "scroll-step": 1,
+    "on-click": "pavucontrol",
+    "ignored-sinks": ["Easy Effects Sink"]
+},
+"group/hardware": {
+		"orientation": "horizontal",
+		"modules": [
+			"cpu",
+			"memory",
+			"battery"
+		]
+	},
+  "cpu": {
+    "interval": 10,
+    "format": "{usage}% ",
+    "max-length": 10
+},
+"memory": {
+    "interval": 30,
+    "format": "{}% ",
+    "max-length": 10
+}
+}
