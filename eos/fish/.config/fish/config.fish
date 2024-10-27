@@ -6,5 +6,5 @@ if status is-interactive
     alias vim="nvim"
     alias sv="sudo nvim"
     alias man="batman"
-    alias vhc="nvim ~/dotfiles/hypr/.config/hypr/hyprland.conf"
+    alias vhc="nvim ~/.config/hypr/hyprland.conf"
 end
