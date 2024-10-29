@@ -1,0 +1,120 @@
+{
+  "layer": "top",
+  "modules-left": ["hyprland/workspaces", "hyprland/mode"],
+  "modules-center": ["hyprland/window"],
+  "modules-right": [
+    "custom/mic",
+    "image#album-art",
+    "custom/player",
+    "pulseaudio",
+    "network",
+    "clock",
+    "privacy",
+  ],
+  "sway/window": {
+    "max-length": 50,
+  },
+  "battery": {
+    "format": "{icon}",
+    "format-icons": ["", "", "", "", ""],
+    "tooltip-format": "{capacity}%",
+  },
+  "clock": {
+    "format": "{:%d %a %H:%M}",
+    "format-alt": "{:%a, %d. %b  %H:%M}",
+    "tooltip-format": "{:%m-%d}",
+  },
+  "network": {
+    "interface": "eth0",
+    "format": "{ifname}",
+    "format-wifi": "",
+    "format-ethernet": "{ipaddr} 󰈀",
+    "format-disconnected": "", //An empty format will hide the module.
+    "tooltip-format": "{ifname} via {gwaddr} 󰊗",
+    "tooltip-format-wifi": "({signalStrength}%) ",
+    "tooltip-format-ethernet": "{ifname} ",
+    "tooltip-format-disconnected": "Disconnected",
+    "max-length": 50,
+  },
+  "hyprland/workspaces": {
+    "format": "{name}: {icon}",
+    "format-icons": {
+      //"1": "",
+      //"2": " ",
+      "5": " ",
+      //"4": " ",
+      "3": "",
+      //"6": " ",
+      "2": "󰍲",
+      "active": "",
+      "default": "",
+    },
+    "persistent_workspaces": {
+      "*": 9,
+    },
+  },
+  "custom/pipewire": {
+    "tooltip": false,
+    "max-length": 6,
+    "exec": "$HOME/.config/waybar/scripts/pipewire.sh",
+    "on-click": "pavucontrol",
+    "on-click-right": "qpwgraph",
+  },
+  "pulseaudio": {
+    "format": "{volume}% {icon}",
+    "format-bluetooth": "{volume}% {icon}",
+    "format-muted": "󰝟",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "phone-muted": "",
+      "portable": "",
+      "car": "",
+      "default": ["", ""],
+    },
+    "scroll-step": 1,
+    "on-click": "pavucontrol",
+    "ignored-sinks": ["Easy Effects Sink"],
+  },
+  "custom/player": {
+    "exec": "~/.config/waybar/scripts/plex_now_playing",
+    "format": "󰝚 {} 󰝚",
+    "interval": 2,
+    "return-type": "json",
+    "on-click": "playerctl play-pause",
+  },
+  "image#album-art": {
+    "exec": "~/.config/waybar/scripts/artwork",
+    "size": 32,
+    "interval": 30,
+  },
+  "privacy": {
+    "icon-spacing": 4,
+    "icon-size": 18,
+    "transition-duration": 250,
+    "modules": [
+      {
+        "type": "screenshare",
+        "tooltip": true,
+        "tooltip-icon-size": 24,
+      },
+      {
+        "type": "audio-in",
+        "tooltip": true,
+        "tooltip-icon-size": 24,
+      },
+    ],
+  },
+  "custom/mic": {
+    "exec": "~/.config/waybar/scripts/mic.sh",
+    "interval": 1,
+    "format": "{icon}",
+    "return-type": "json",
+    "format-icons": {
+      "muted": "󰍭"
+    }
+  }
+
+}
