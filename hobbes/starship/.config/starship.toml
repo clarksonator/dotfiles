@@ -4,6 +4,7 @@ format = """
 [](surface0)\
 $os\
 $username\
+$hostname\
 [](bg:peach fg:surface0)\
 $directory\
 [](fg:peach bg:green)\
@@ -205,6 +206,12 @@ disabled = false
 time_format = "%R"
 style = "bg:peach"
 format = '[[  $time ](fg:mantle bg:purple)]($style)'
+
+[hostname]
+ssh_only = true
+format = '[$ssh_symbol](bold blue)on [$hostname](bold red) '
+trim_at = '.clarkson.local'
+disabled = false
 
 [line_break]
 disabled = false

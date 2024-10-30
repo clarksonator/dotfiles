@@ -13,11 +13,15 @@ if status is-interactive
   alias refish="source ~/.config/fish/config.fish"
   alias reway="killall -SIGUSR2 waybar"
   set -gx EDITOR nvim
-  if not set -q SSH_AGENT_PID
-      eval (ssh-agent -c) > /dev/null
-      set -U SSH_AGENT_PID $SSH_AGENT_PID
-      set -U SSH_AUTH_SOCK $SSH_AUTH_SOCK
-  end
+  #if not set -q SSH_AGENT_PID
+  #    eval (ssh-agent -c) > /dev/null
+  #    set -U SSH_AGENT_PID $SSH_AGENT_PID
+  #    set -U SSH_AUTH_SOCK $SSH_AUTH_SOCK
+  #    set -eg SSH_AGENT_PID
+  #    set -eg SSH_AUTH_SOCK
+  #    ssh-add -kq ~/.ssh/github
+  #end
+  eval (keychain --eval -q id_rsa github)
 
   starship init fish | source
 end
