@@ -1,0 +1,9 @@
+[pyprland]
+plugins = ["scratchpads"]
+
+[scratchpads.pwd]
+animation = "fromTop"
+command = "RBW_MENU_COMMAND=tofi rbw-menu password | wl-copy"
+size = "75% 60%"
+max_size = "1920px 100%"
+margin = 50

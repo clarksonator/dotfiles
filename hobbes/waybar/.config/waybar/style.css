@@ -1,0 +1,55 @@
+@import "frappe.css";
+
+* {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-top: 0px;
+}
+
+window#waybar {
+  /*background-color: shade(@base, 0.7);*/
+  border: 2px solid alpha(@crust, 0.3);
+  background: rgba(48, 52, 70, 0.7);
+}
+
+
+#workspaces button {
+  padding: 0 5px;
+  /*background: transparent;*/
+  /*border-bottom: 3px solid transparent;*/
+  color: @peach;
+}
+
+#workspaces button.active {
+  color: @white;
+}
+
+button {
+  margin-right: 10px;
+}
+
+.horizontal .module {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+#workspaces {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+#custom-player {
+  color: @green;
+}
+
+#custom-mic {
+  color: @red;
+}
+
+#clock {
+  color: @blue;
+}
+
+#pulseaudio {
+  color: @sapphire;
+}

@@ -1,0 +1,7 @@
+#!/bin/bash
+MICSTATUS=`wpctl get-volume @DEFAULT_AUDIO_SOURCE@ | grep MUTED`
+if [ $MICSTATUS ]
+  echo "muted"
+else
+  echo "nope"
+end
