@@ -2,8 +2,8 @@
 # VERSION: 3.0
 SETUVAR --export BAT_THEME:Catppuccin\x20Frappe
 SETUVAR --export EDITOR:nvim
-SETUVAR SSH_AGENT_PID:4052733
-SETUVAR SSH_AUTH_SOCK:/tmp/ssh\x2dXXXXXXCFBnPX/agent\x2e4052730
+SETUVAR SSH_AGENT_PID:632183
+SETUVAR SSH_AUTH_SOCK:/tmp/ssh\x2dXXXXXXMP1ApM/agent\x2e632174
 SETUVAR __fish_initialized:3400
 SETUVAR _fisher_upgraded_to_4_4:\x1d
 SETUVAR fish_color_autosuggestion:brblack
