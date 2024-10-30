@@ -7,9 +7,6 @@ if status is-interactive
     alias sv="sudo nvim"
     alias man="batman"
     alias vhc="nvim ~/.config/hypr/hyprland.conf"
-    if not set -q SSH_AGENT_PID
-      eval (ssh-agent -c) > /dev/null
-      set -U SSH_AGENT_PID $SSH_AGENT_PID
-      set -U SSH_AUTH_SOCK $SSH_AGENT_SOCK
-    end
+    alias vfc="nvim ~/.config/fish/config.fish"
+    eval (keychain --eval -q id_rsa github)
 end
