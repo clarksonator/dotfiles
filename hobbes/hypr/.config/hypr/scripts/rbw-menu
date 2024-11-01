@@ -1,5 +1,6 @@
 #!/usr/bin/env sh
 set -eu
+chosen_field=''
 IFS='
 
 '
@@ -46,6 +47,8 @@ field)
 	;;
 esac
 
-[ "$chosen_field" = "" ] && exit 1
-
-rbw get "$chosen_item" --raw | jq -r "(.fields | .[] | select(.name == \"$chosen_field\")).value" | xargs echo -n
+if [[ ! $chosen_field ]]; then
+  exit 0
+else
+  rbw get "$chosen_item" --raw | jq -r "(.fields | .[] | select(.name == \"$chosen_field\")).value" | xargs echo -n
+fi

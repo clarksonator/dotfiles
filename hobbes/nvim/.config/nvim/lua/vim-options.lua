@@ -5,7 +5,6 @@ vim.cmd("set shiftwidth=2")
 vim.cmd("set mouse=")
 vim.g.mapleader = " "
 vim.g.background = "light"
-vim.cmd("set mouse=")
 
 vim.opt.swapfile = false
 

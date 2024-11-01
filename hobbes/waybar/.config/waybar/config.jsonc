@@ -8,6 +8,7 @@
     "custom/player",
     "pulseaudio",
     "network",
+    "group/hardware",
     "clock",
     "privacy",
   ],
@@ -115,6 +116,23 @@
     "format-icons": {
       "muted": "󰍭"
     }
-  }
+  },
+  "group/hardware": {    
+    "orientation": "horizontal",    
+    "modules": [    
+      "cpu",    
+      "memory",    
+    ]    
+  },    
+  "cpu": {    
+    "interval": 10,    
+    "format": "{usage}% ",    
+    "max-length": 10
+},
+"memory": {
+    "interval": 30,
+    "format": "{}% ",
+    "max-length": 10
+}
 
 }

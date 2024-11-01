@@ -53,3 +53,7 @@ button {
 #pulseaudio {
   color: @sapphire;
 }
+
+#cpu, #memory {
+  color: @teal;
+}
