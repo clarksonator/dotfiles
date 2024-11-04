@@ -3,9 +3,6 @@
     "modules-left": ["hyprland/workspaces", "hyprland/mode"],
     "modules-center": ["hyprland/window"],
     "modules-right": ["network", "pulseaudio", "group/hardware", "clock"],
-    "hyprland/window": {
-        "max-length": 50
-    },
     "battery": {
         "interval": 60,
         "states": {
@@ -38,16 +35,13 @@
     "hyprland/workspaces": {
         "format": "{name}: {icon}",
         "format-icons": {
-		"1": " ",
-		"2": " ",
-		"3": " ",
-		"4": " ",
-		"5": "",
+		"8": " ",
+		"9": " ",
+		"10": " ",
+		"11": " ",
+		"12": "",
 		"active": "",
 		"default": ""
-        },
-        "persistent_workspaces": {
-            "*": 4,
         }
     },
     "custom/pipewire": {
