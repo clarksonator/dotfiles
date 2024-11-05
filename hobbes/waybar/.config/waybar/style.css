@@ -50,8 +50,14 @@ button {
   color: @blue;
 }
 
+tooltip {
+  background: #303446;
+  opacity: .80;
+}
+
 #pulseaudio {
   color: @sapphire;
+  padding-right: 5px;
 }
 
 #cpu, #memory {

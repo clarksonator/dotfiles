@@ -12,9 +12,6 @@
     "clock",
     "privacy",
   ],
-  "sway/window": {
-    "max-length": 50,
-  },
   "battery": {
     "format": "{icon}",
     "format-icons": ["", "", "", "", ""],
@@ -22,8 +19,21 @@
   },
   "clock": {
     "format": "{:%d %a %H:%M}",
-    "format-alt": "{:%a, %d. %b  %H:%M}",
-    "tooltip-format": "{:%m-%d}",
+    "on-click": "orage",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+                    "mode"          : "month",
+                    "mode-mon-col"  : 1,
+                    "weeks-pos"     : "",
+                    "on-scroll"     : 1,
+                    "format": {
+                              "months":     "<span color='#c6d0f5'><b>{}</b></span>",
+                              "days":       "<span color='#eebebe'><b>{}</b></span>",
+                              "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                              "weekdays":   "<span color='#e5c890'><b>{}</b></span>",
+                              "today":      "<span color='#e78284'><b>{}</b></span>"
+                              }
+                    }
   },
   "network": {
     "interface": "eth0",
@@ -53,6 +63,9 @@
     "persistent_workspaces": {
       "*": 9,
     },
+  },
+  "hyprland/window": {
+    "separate-outputs": true
   },
   "custom/pipewire": {
     "tooltip": false,
