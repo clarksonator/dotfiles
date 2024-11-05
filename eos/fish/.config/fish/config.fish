@@ -9,4 +9,9 @@ if status is-interactive
     alias vhc="nvim ~/.config/hypr/hyprland.conf"
     alias vfc="nvim ~/.config/fish/config.fish"
     eval (keychain --eval -q id_rsa github)
+    fish_add_path .local/share/gem/ruby/3.3.0/bin
+    #function fish_title
+    #  set -q argv[1]; or set argv (history|head -n 1) 
+    #  echo (fish_prompt_pwd_dir_length=1 prompt_pwd): $argv " -- fish";
+    #end
 end

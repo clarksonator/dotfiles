@@ -10,16 +10,15 @@
 window#waybar {
     opacity: .6;
     background-color: @crust;
-    color: @overlay0;
+    color: @overlay;
     transition-property: background-color;
     transition-duration: 0.1s;
-    border-bottom: 1px solid @overlay1;
 }
 
 #window {
     margin: 8px;
-    padding-left: 8;
-    padding-right: 8;
+    padding-left: 8px;
+    padding-right: 8px;
 }
 
 button {
@@ -33,9 +32,13 @@ button:hover {
     border-top: 2px solid @mauve;
 }
 
+#workspaces {
+  margin: 0px;
+}
+
 #workspaces button {
     opacity: 1.0;
-    padding: 0 4px;
+    color: @peach;
 }
 
 #workspaces button.focused {
@@ -44,6 +47,7 @@ button:hover {
 
 #workspaces button.active {
     color: #FFF;
+    padding-left: 10px;
 }
 
 #workspaces button.urgent {
