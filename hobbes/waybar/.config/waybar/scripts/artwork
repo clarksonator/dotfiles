@@ -1,5 +1,5 @@
 #!/bin/bash
-album_art=$(playerctl -p Plexamp metadata mpris:artUrl)
+album_art=$(playerctl -p Plexamp,io.bassi.Amberol metadata mpris:artUrl)
 if [[ -z $album_art ]] 
 then
    # spotify is dead, we should die too.

@@ -1,11 +1,11 @@
-width = 60%
+width = 50%
 height = 50%
 border-width = 0
 outline-width = 0
 padding-left = 5%
 padding-top = 5%
 result-spacing = 10
-num-results = 10
+num-results = 20
 
 font = FiraCode Nerd Font
 font-size = 16
@@ -14,6 +14,6 @@ text-color = #c6d0f5
 
 prompt-text = " : "
 
-background-color = #737994
+background-color = #303446D9
 selection-color = #eebebe
 corner-radius = 10
