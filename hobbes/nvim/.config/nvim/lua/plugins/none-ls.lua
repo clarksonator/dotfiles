@@ -9,7 +9,9 @@ return {
         null_ls.builtins.formatting.shellharden,
         null_ls.builtins.diagnostics.erb_lint,
         null_ls.builtins.diagnostics.rubocop,
-        null_ls.builtins.formatting.rubocop,
+        null_ls.builtins.formatting.rubocop.with ({
+          filetypes = { "html", "erb" },
+        }),
       },
     })
 
