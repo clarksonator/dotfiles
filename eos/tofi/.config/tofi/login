@@ -102,7 +102,7 @@
 	# alternate-result-background-corner-radius = 0
 
 	# Selection text
-	selection-color = #F92672
+	selection-color = #eebebe
 	selection-background = #00000000
 	selection-background-padding = 0
 	selection-background-corner-radius = 0
@@ -183,7 +183,7 @@
 	border-width = 1 
 
 	# Border color
-	border-color = #F92672
+	#border-color = #F92672
 
 	# Radius of window corners in pixels.
 	corner-radius = 0
@@ -321,9 +321,9 @@
 # Catppuccin Frappé
 text-color = #c6d0f5
 prompt-color = #e78284
-selection-color = #e5c890
-background-color = #303446
-border-color = #303446
-outline-color = #eebebe
+selection-color = #eebebe
+background-color = #303446D9
+#border-color = #303446
+#outline-color = #eebebe
 border-width = 0
-outline-width = 1
+outline-width = 0
