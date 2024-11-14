@@ -1,0 +1,10 @@
+#!/bin/bash
+paused=`echo '{ "command": ["get_property", "pause"] }' | socat - ~/plexsocket 2> /dev/null|jq -r .data`
+if [ ! -n "$paused" ] || [ $paused = 'true' ]; then
+  /home/calvin/.config/waybar/scripts/waybar_now_playing
+else
+  media=`echo '{ "command": ["get_property", "user-data"] }' | socat - ~/plexsocket`
+  artist=`echo $media|jq -r .data.plex.\"playing-media\".decision.metadataItem.grandparentTitle`
+  title=`echo $media|jq -r .data.plex.\"playing-media\".decision.metadataItem.title`
+  echo '{"alt":"playing","class":"custom-player","text":"'$artist' - '$title'"}'
+fi

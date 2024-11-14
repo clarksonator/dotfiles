@@ -3,7 +3,7 @@ if status is-interactive
 	alias ls='eza --icons=always -lh'
 	alias vim='nvim'
 	alias vi='nvim'
-	alias cat='bat --color always'
+	alias cat='bat --color always -p'
 	alias sv='sudo nvim'
 	alias man='batman'
   alias vhc='nvim ~/.config/hypr/hyprland.conf'
@@ -12,7 +12,11 @@ if status is-interactive
   alias vfc='nvim ~/.config/fish/config.fish'
   alias refish="source ~/.config/fish/config.fish"
   alias reway="killall -SIGUSR2 waybar"
+  alias grep="grep --color=always -I"
   set -gx EDITOR nvim
+  set -gx GEM_HOME $HOME/.local/share/gem
+  set -gx FREETYPE_PROPERTIES "truetype:interpreter-version=40"
+  fish_add_path $HOME/.local/share/gem/ruby/3.3.0/bin
   #if not set -q SSH_AGENT_PID
   #    eval (ssh-agent -c) > /dev/null
   #    set -U SSH_AGENT_PID $SSH_AGENT_PID
