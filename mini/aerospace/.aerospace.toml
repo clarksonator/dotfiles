@@ -14,6 +14,7 @@ after-login-command = [
 # 'after-startup-command' is run after 'after-login-command'
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
 after-startup-command = [
+  'exec-and-forget open -n /Applications/AutoRaise.app'
 ]
 
 # Start AeroSpace at login
@@ -55,12 +56,12 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 #                 Monitor pattern is the same as for 'workspace-to-monitor-force-assignment'.
 #                 See: https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
-inner.horizontal = 10
-inner.vertical =   10
-outer.left =       5
+inner.horizontal = 20
+inner.vertical =   20
+outer.left =       10
 outer.bottom =     10
 outer.top =        10
-outer.right =      5
+outer.right =      10
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -107,15 +108,32 @@ tell application "iTerm"
 end tell'
 '''
 
+alt-p = '''exec-and-forget osascript -e '
+tell application "iTerm"
+  if it is running
+    create window with profile "PWSH"
+  end if
+  activate
+end tell'
+'''
+
+alt-b = '''exec-and-forget open -n /Applications/Zen\ Browser.app'''
+
+ctrl-cmd-alt-z = 'exec-and-forget /Users/Calvin/scripts/getusername'
+ctrl-cmd-alt-x = 'exec-and-forget /Users/Calvin/scripts/getpassword'
+alt-c = 'exec-and-forget /Users/Calvin/scripts/showpassword'
+cmd-r = 'exec-and-forget /Users/Calvin/scripts/runapp'
+
+
 # See: https://nikitabobko.github.io/AeroSpace/commands#layout
 alt-slash = 'layout tiles horizontal vertical'
 alt-comma = 'layout accordion horizontal vertical'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#focus
-alt-h = 'focus left' 
-alt-j = 'focus down'
-alt-k = 'focus up'
-alt-l = 'focus right'
+ctrl-cmd-alt-left = 'focus left' 
+ctrl-cmd-alt-down = 'focus down'
+ctrl-cmd-alt-up = 'focus up'
+ctrl-cmd-alt-right = 'focus right'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move
 alt-shift-h = 'move left'
@@ -141,7 +159,7 @@ alt-9 = 'workspace 9'
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
 alt-shift-1 = 'move-node-to-workspace 1'
 alt-shift-2 = 'move-node-to-workspace 2'
-alt-shift-3 = 'move-node-to-workspace 3'
+alt-shift-3 = ['move-node-to-workspace 3', 'workspace 3']
 alt-shift-4 = 'move-node-to-workspace 4'
 alt-shift-5 = 'move-node-to-workspace 5'
 alt-shift-6 = 'move-node-to-workspace 6'
@@ -157,9 +175,9 @@ alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
 alt-shift-semicolon = 'mode service'
 
-alt-shift-f = 'layout floating tiling'
+ctrl-cmd-alt-f = 'layout floating tiling'
 
-alt-shift-c = 'exec-and-forget /Users/calvin/centerResize.sh 1920 1080'
+alt-shift-c = 'exec-and-forget /Users/calvin/scripts/centerResize 1920 1080'
 
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -253,3 +271,8 @@ run = ['layout floating']
 [[on-window-detected]]
 if.app-id = 'com.apple.Notes'
 run = ['layout floating']
+
+[[on-window-detected]]
+if.app-id = 'com.coteditor.CotEditor'
+run = ['layout floating']
+
